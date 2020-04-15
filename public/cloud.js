@@ -5,7 +5,7 @@ class Cloud {
 
     this.width = 200;
     this.height = 100;
-
+    this.floatingOffset = random(1000);
     this.pos = createVector(0,0);
     this.pos.x = -300;
     this.pos.y = random(10, height - height/8 - 50); //groundHeight
@@ -20,12 +20,14 @@ class Cloud {
     //rect(this.pos.x, this.pos.y, this.width, this.height);
     image(cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
-    text(this.happyThought, this.pos.x + 50, this.pos.y + 25, 100, 100);
+    text(this.happyThought, this.pos.x + this.width/2, this.pos.y + this.width/2, this.width - 50, this.height - 50);
   }
 
   moveCloud(){
-    noise
-    this.pos.x += 4;
+    var floating = map(noise(this.floatingOffset), 0,1, -.5, .5);
+    this.pos.x += .5;
+    this.pos.y += floating;
+    this.floatingOffset += .01;
     
   }
 
