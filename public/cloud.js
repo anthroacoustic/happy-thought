@@ -1,5 +1,5 @@
 class Cloud {
-  constructor(happy, cloud){
+  constructor(happy, cloudImg){
     this.happyThought = happy;
     console.log(this.happyThought)
 
@@ -18,13 +18,15 @@ class Cloud {
   drawCloud(){
     //fill(51);
     //rect(this.pos.x, this.pos.y, this.width, this.height);
-    image(cloud, 10, 10);
+    image(cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
     text(this.happyThought, this.pos.x + 50, this.pos.y + 25, 100, 100);
   }
 
   moveCloud(){
+    noise
     this.pos.x += 4;
+    
   }
 
 }
