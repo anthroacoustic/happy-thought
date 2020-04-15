@@ -2,7 +2,7 @@
 //import express to create the server
 var express = require('express');
 var app = express();
-var server = app.listen('3000');
+var server = app.listen('5000');
 
 //tell the server to serve everything that is in the public folder
 app.use(express.static('public'));
