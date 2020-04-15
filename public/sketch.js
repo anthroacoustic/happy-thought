@@ -3,7 +3,7 @@
 let socket;
 
 let canvas;
-
+let cloud;
 
 //create arrays for the bird and cloud objects
 let birds = [];
@@ -16,6 +16,11 @@ let happyThoughts = ["Cease the day!", "Spring!", "There is beauty all around us
 let userInput;
 let submitButton;
 let popUp;
+
+//function preload(){
+  //cloud = loadImage(cloud.png)
+//}
+
 
 function setup() {
 

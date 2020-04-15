@@ -17,7 +17,8 @@ class Cloud {
 
   drawCloud(){
     fill(51);
-    rect(this.pos.x, this.pos.y, this.width, this.height);
+    /ect(this.pos.x, this.pos.y, this.width, this.height);
+    //image(cloud, this.pos.x, this.pos.y, this.widht, this.height);
     fill (500);
     text (this.happyThought, this.pos.x + 50, this.pos.y + 25, 100, 100);
   }
