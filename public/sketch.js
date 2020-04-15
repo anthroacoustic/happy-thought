@@ -17,9 +17,9 @@ let userInput;
 let submitButton;
 let popUp;
 
-//function preload(){
-  //cloud = loadImage(cloud.png)
-//}
+function preload(){
+  cloud = createImg('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337');
+}
 
 
 function setup() {
@@ -49,6 +49,8 @@ function setup() {
 function draw() {
   background(0, 159, 241);
   drawGround();
+    image(cloud, 100, 100);
+
 
 //update and draw all the bords
   for (bird of birds){
@@ -76,7 +78,7 @@ function draw() {
 
 // clouds are created at random time intervals
 function createClouds(){
-  clouds.push(new Cloud(random(happyThoughts)));
+  clouds.push(new Cloud(random(happyThoughts, cloud)));
   let randomTime = random(3,6)* 1000;
   setTimeout(createClouds, randomTime);
 }
