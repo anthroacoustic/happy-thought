@@ -24,7 +24,12 @@ function setup() {
   canvas.style('z-index', '-1')
 
   //create a socet that connects to the server
-  socket = io.connect('http://localhost:3000');
+  //connects to a local host
+  //socket = io.connect('http://localhost:3000');
+
+  //connects to heroku server:
+  socket = io();
+
   //when the socket recieves a message it performs code
   //socket.on('mouse', newDrawing);
   socket.on('happyThoughtFrom', addHappyThought);

@@ -2,9 +2,10 @@
 //import express to create the server
 var express = require('express');
 var app = express();
+//let heroku set the port
 var port = process.env.PORT || 8080;
 var server = app.listen(port);
-//let heroku set the port
+
 
 
 //tell the server to serve everything that is in the public folder
