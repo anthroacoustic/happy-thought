@@ -1,5 +1,6 @@
 let socket;
 let canvas;
+
 let cloudImg;
 let treeImg;
 let birdImg;
