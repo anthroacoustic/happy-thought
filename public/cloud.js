@@ -3,7 +3,7 @@ class Cloud {
     this.happyThought = happy;
     console.log(this.happyThought)
     this.tWidth = textWidth(this.happyThought);
-    this.cloudImg = cloudImg
+    this.cloudImg = cloudImg;
     this.width = 200;
     this.height = 100;
     
@@ -25,7 +25,7 @@ class Cloud {
     //rect(this.pos.x, this.pos.y, this.width, this.height);
     image(this.cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
-    text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2, this.width - this.width/4, this.height - this.height/8);
+    text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5, this.width - this.width/4);
   }
 
   moveCloud(){
@@ -35,5 +35,7 @@ class Cloud {
     this.floatingOffset += .001;
     
   }
+  
+  
 
 }
