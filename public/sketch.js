@@ -93,7 +93,7 @@ function draw() {
 // clouds are created at random time intervals
 function createClouds(){
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
-  let randomTime = random(3,6)* 1000;
+  let randomTime = random(5,10) * 1000;
   setTimeout(createClouds, randomTime);
 }
 

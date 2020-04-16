@@ -27,7 +27,7 @@ class Cloud {
     var floating = map(noise(this.floatingOffset), 0,1, -.5, .5);
     this.pos.x += .5;
     this.pos.y += floating;
-    this.floatingOffset += .01;
+    this.floatingOffset += .001;
     
   }
 
