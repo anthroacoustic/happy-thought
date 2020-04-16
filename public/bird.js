@@ -9,6 +9,7 @@ class Bird {
     //this.vel = createVector(0, 0);
     //this.acc = createVector(0, 0);
     //this.mass = 10;
+
   }
 
   drawBird(){
@@ -29,18 +30,8 @@ class Bird {
   
   moveLeft(){
     if (this.direction = 'right'){
-      // move to x + img's width
-    ctx.translate(x+birdImg.width,y);
-
-    // scaleX by -1; this "trick" flips horizontally
-    ctx.scale(-1,1);
+      birdImg = 
     
-    // draw the img
-    // no need for x,y since we've already translated
-    ctx.drawImage(img,0,0);
-    
-    // always clean up -- reset transformations to default
-    ctx.setTransform(1,0,0,1,0,0);
       this.direction = 'left'
     }
    

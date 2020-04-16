@@ -3,7 +3,9 @@ let canvas;
 
 let cloudImg;
 let treeImg;
-let birdImg;
+let birdLeftImg;
+let birdRightImg
+
 
 //create arrays for the bird and cloud objects
 let birds = [];
@@ -20,7 +22,9 @@ let popUp;
 function preload(){
   cloudImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337');
   treeImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FTree.png?v=1586995229097');
-  birdImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBird.png?v=1586995846100');
+  birdLeftImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBirdLeft.png?v=1586998054638');
+  birdRightImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBirdRight.png?v=1586998056462');
+  
 }
 
 
