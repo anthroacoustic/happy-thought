@@ -22,8 +22,10 @@ let popUp;
 function preload(){
   cloudImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337');
   treeImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FTree.png?v=1586995229097');
+  mountainImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FMountains.png?v=1586998992648');
   birdLeftImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBirdLeft.png?v=1586998054638');
   birdRightImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBirdRight.png?v=1586998056462');
+  
   
 }
 
@@ -54,14 +56,15 @@ function setup() {
 
 function draw() {
   background(0, 159, 241);
-  
+  image(mountainImg, 0, height - 150, width, height/4);
 
 
 //update and draw all the bords
 
 
 //update and draw all the clouds();
- for (cloud of clouds){
+ 
+  for (cloud of clouds){
 
     cloud.moveCloud();
     cloud.drawCloud();
@@ -115,10 +118,10 @@ function drawGround(){
 
 
 function createInterface(){
-    popUp = createDiv(['<p>sdfdfs</p>']);
+    popUp = createDiv(['<p>Write your happy thought.</p>']);
     popUp.size(400, 200);
     popUp.position(canvas.width/2 - popUp.width/2, canvas.height/2 - popUp.height/2);
-    popUp.style('background-color', 'red');
+    popUp.style('background-color', '#8DB32C');
     popUp.hide();
 
 
