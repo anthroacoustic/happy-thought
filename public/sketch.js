@@ -135,6 +135,7 @@ function createInterface() {
   userInput.style("display", "block");
   userInput.style("margin-right", "auto");
   userInput.style("margin-left", "auto");
+  userInput.attribute("maxlength", "60");
   userInput.hide();
 
   submitButton = createButton("submit");
