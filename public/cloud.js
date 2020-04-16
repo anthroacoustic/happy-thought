@@ -1,8 +1,12 @@
 class Cloud {
   constructor(happy, cloudImg){
+    
+    
     this.happyThought = happy;
     console.log(this.happyThought)
     this.tWidth = textWidth(this.happyThought);
+    
+    
     this.cloudImg = cloudImg;
     this.width = 200;
     this.height = 100;
@@ -13,6 +17,7 @@ class Cloud {
     this.pos.x = -300;
     this.pos.y = random(10, height - height/8 - 50); //groundHeight
     
+  
     
     //console.log(this.pos.y);
     //this.vel = createVector(0, 0);
