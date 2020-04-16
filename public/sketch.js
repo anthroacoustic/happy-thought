@@ -16,6 +16,7 @@ let popUp;
 
 function preload(){
   cloudImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337');
+  treeImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FTree.png?v=1586995229097');
 }
 
 
@@ -45,15 +46,11 @@ function setup() {
 
 function draw() {
   background(0, 159, 241);
-  drawGround();
-  //image(cloudImg, 100, 100);
+  
 
 
 //update and draw all the bords
-  for (bird of birds){
-    bird.update();
-    bird.drawBird();
-  }
+
 
 //update and draw all the clouds();
  for (cloud of clouds){
@@ -61,7 +58,16 @@ function draw() {
     cloud.moveCloud();
     cloud.drawCloud();
   }
-
+  
+  draw
+  
+  for (bird of birds){
+    bird.update();
+    bird.drawBird();
+  }
+  
+ drawGround();
+ 
 //if the user presses the left or right arrow, the bird will move to the left or right
   if (keyIsPressed === true) {
     if (keyCode === LEFT_ARROW) {

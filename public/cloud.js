@@ -20,7 +20,7 @@ class Cloud {
     //rect(this.pos.x, this.pos.y, this.width, this.height);
     image(cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
-    text(this.happyThought, this.pos.x + this.width/2, this.pos.y + this.width/2, this.width - 50, this.height - 50);
+    text(this.happyThought, this.pos.x + this.width/8, this.pos.y + this.width/8, this.width - this.width/8, this.height - this.width/8);
   }
 
   moveCloud(){
