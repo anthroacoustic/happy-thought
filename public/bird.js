@@ -1,10 +1,11 @@
 class Bird {
-  constructor(x, birdImg){
+  constructor(x, birdRightImg, birdLeftImg){
     //console.log(x);
     this.pos = createVector(0,0);
     this.pos.x = x;
     this.pos.y = height - height/8 - 45; //groundHeight
-    this.direction = 'right'
+    this.direction = 'right';
+    this.img = birdRightImg;
     //console.log(this.pos.y);
     //this.vel = createVector(0, 0);
     //this.acc = createVector(0, 0);
@@ -15,7 +16,7 @@ class Bird {
   drawBird(){
     //fill(51, 22, 33);
     //rect(this.pos.x, this.pos.y, 44, 44);
-    image(birdImg, this.pos.x, this.pos.y, 69, 45);
+    image(this.img, this.pos.x, this.pos.y, 69, 45);
   }
 
   update(){
@@ -30,12 +31,17 @@ class Bird {
   
   moveLeft(){
     if (this.direction = 'right'){
-      birdImg = 
-    
-      this.direction = 'left'
+      this.img = birdLeftImg;
+      this.direction = 'left'   
     }
-   
-    
+   this.pos.x -= 1;   
   }
-
+  
+  moveRight(){
+    if(this.direction = 'left'){
+      this.img = birdRightImg;
+      this.direction = 'right';
+    }
+    this.pos.x +=1;
+  }
 }

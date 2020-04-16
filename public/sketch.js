@@ -4,7 +4,7 @@ let canvas;
 let cloudImg;
 let treeImg;
 let birdLeftImg;
-let birdRightImg
+let birdRightImg;
 
 
 //create arrays for the bird and cloud objects
@@ -47,7 +47,7 @@ function setup() {
 
   createInterface();
 
-  birds.push(new Bird(random(width), birdImg));
+  birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
   createClouds();
   setTimeout(destroyClouds, 10000);
   }
@@ -79,10 +79,9 @@ function draw() {
 //if the user presses the left or right arrow, the bird will move to the left or right
   if (keyIsPressed === true) {
     if (keyCode === LEFT_ARROW) {
-      birds[0].pos.x -= 1;
       birds[0].moveLeft();
     } else if (keyCode === RIGHT_ARROW) {
-      birds[0].pos.x += 1;
+      birds[0].moveRight();
     }
 
   }
