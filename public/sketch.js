@@ -76,6 +76,7 @@ function draw() {
   if (keyIsPressed === true) {
     if (keyCode === LEFT_ARROW) {
       birds[0].pos.x -= 1;
+      birds[0].moveLeft();
     } else if (keyCode === RIGHT_ARROW) {
       birds[0].pos.x += 1;
     }
