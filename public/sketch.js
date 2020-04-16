@@ -1,6 +1,8 @@
 let socket;
 let canvas;
 let cloudImg;
+let treeImg;
+let birdImg;
 
 //create arrays for the bird and cloud objects
 let birds = [];
@@ -17,6 +19,7 @@ let popUp;
 function preload(){
   cloudImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337');
   treeImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FTree.png?v=1586995229097');
+  birdImg = loadImage('https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FBird.png?v=1586995846100');
 }
 
 
@@ -39,7 +42,7 @@ function setup() {
 
   createInterface();
 
-  birds.push(new Bird(random(width)));
+  birds.push(new Bird(random(width), birdImg));
   createClouds();
   setTimeout(destroyClouds, 10000);
   }
@@ -59,7 +62,7 @@ function draw() {
     cloud.drawCloud();
   }
   
-  draw
+  image(treeImg, width/4 * 3,  200, 100, 150);
   
   for (bird of birds){
     bird.update();

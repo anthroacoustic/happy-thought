@@ -1,6 +1,5 @@
 class Bird {
-  constructor(x,y){
-    this.pos = createVector(x,y)
+  constructor(x, birdImg){
     this.pos.x = x;
     this.pos.y = height - height/8 - 44; //groundHeight
     console.log(this.pos.y);
@@ -10,8 +9,9 @@ class Bird {
   }
 
   drawBird(){
-    fill(51, 22, 33);
-    rect(this.pos.x, this.pos.y, 44, 44);
+    //fill(51, 22, 33);
+    //rect(this.pos.x, this.pos.y, 44, 44);
+    Image(this.pos.x, this.pos.y, 44, 44);
   }
 
   update(){
