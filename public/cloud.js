@@ -1,8 +1,7 @@
 class Cloud {
   constructor(happy, cloudImg){
     
-    this.width = width/3;
-    this.height = height/4;
+    this.sizeUp();
     
     this.happyThought = happy;
     console.log(this.happyThought)
@@ -40,7 +39,10 @@ class Cloud {
     
   }
   
-  sizeUp()
+  sizeUp(){
+    this.width = width/3;
+    this.height = height/4;
+  }
   
 
 }

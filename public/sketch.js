@@ -71,6 +71,18 @@ function setup() {
 }
 
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  for (bird of birds){
+    bird.sizeUp();
+  }
+  
+  for (cloud of clouds){
+    cloud.sizeUp();
+  }
+}
+
+
 function draw() {
   //sky color
   background(0, 159, 241);
@@ -131,6 +143,13 @@ function drawGround() {
   rect(0, height - height / 8, width, height / 8);
 }
 
+
+
+
+
+
+//INTERFACE
+
 function createInterface() {
   popUp = createDiv(["<p>Write your happy thought.</p>"]);
   popUp.size(400, 200);
@@ -159,6 +178,7 @@ function createInterface() {
   popUp.child(submitButton);
 
   let button = createButton("what is your happy thought");
+  button.size(width/4, height)
   button.position(600, 375);
   button.mousePressed(showpopUp);
 }
