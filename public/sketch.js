@@ -1,6 +1,7 @@
 let socket;
 let canvas;
 
+//create variables to hold the image files so we can draw them with the image function.
 let cloudImg;
 let treeImg;
 let birdLeftImg;
@@ -22,6 +23,7 @@ let userInput;
 let submitButton;
 let popUp;
 
+//preload all of the image files into their variables.
 function preload() {
   cloudImg = loadImage(
     "https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337"
@@ -40,34 +42,41 @@ function preload() {
   );
 }
 
+
+//setting the skech up
 function setup() {
-  canvas = createCanvas(800, 400);
-  //background(0, 159, 241);
+  
+  canvas = createCanvas(900, 600);
+  
   canvas.style("z-index", "-1");
 
-  //create a socet that connects to the server
+  //create a socket that connects to the server
   //connects to a local host
   //socket = io.connect('http://localhost:3000');
 
-  //connects to heroku server:
+  //connects to the heroku or glitch server:
   socket = io();
 
   //when the socket recieves a message it performs code
-  //socket.on('mouse', newDrawing);
   socket.on("happyThoughtFrom", addHappyThought);
 
+  
   createInterface();
 
+  //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
+ 
   createClouds();
   setTimeout(destroyClouds, 10000);
 }
 
-function draw() {
-  background(0, 159, 241);
-  image(mountainImg, 0, height - 150, width, height / 4);
 
-  //update and draw all the bords
+function draw() {
+  //sky color
+  background(0, 159, 241);
+  
+  //
+  image(mountainImg, 0, height - height/4 - height/8, width, height / 4);
 
   //update and draw all the clouds();
 
@@ -75,9 +84,11 @@ function draw() {
     cloud.moveCloud();
     cloud.drawCloud();
   }
+  
+  //draw the tree
+  image(treeImg, (width / 4) * 3, height - height/8, 100, 150);
 
-  image(treeImg, (width / 4) * 3, 200, 100, 150);
-
+  //update and draw all the bords
   for (bird of birds) {
     bird.update();
     bird.drawBird();
@@ -187,9 +198,3 @@ function mouseDragged(){
 }
 */
 
-function newDrawing(data) {
-  console.log(data.x);
-  noStroke();
-  fill(255, 0, 100);
-  ellipse(data.x, data.y, 36, 36);
-}
