@@ -46,7 +46,7 @@ function preload() {
 //setting the skech up
 function setup() {
   
-  canvas = createCanvas(900, 600);
+  canvas = createCanvas(600, 400);
   
   canvas.style("z-index", "-1");
 
@@ -76,7 +76,7 @@ function draw() {
   background(0, 159, 241);
   
   //
-  image(mountainImg, 0, height - height/4 - height/8, width, height / 4);
+  image(mountainImg, 0, height - height/4 - height/8, width, height/4);
 
   //update and draw all the clouds();
 
@@ -86,7 +86,7 @@ function draw() {
   }
   
   //draw the tree
-  image(treeImg, (width / 4) * 3, height - height/8, 100, 150);
+  image(treeImg, (width / 4) * 3, height - height/8 - height/3, width/6, height/3);
 
   //update and draw all the bords
   for (bird of birds) {

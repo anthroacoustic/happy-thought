@@ -1,6 +1,8 @@
 class Cloud {
   constructor(happy, cloudImg){
     
+    this.width = width/3;
+    this.height = height/4;
     
     this.happyThought = happy;
     console.log(this.happyThought)
@@ -8,14 +10,12 @@ class Cloud {
     
     
     this.cloudImg = cloudImg;
-    this.width = 200;
-    this.height = 100;
     
     this.floatingOffset = random(1000);
     
     this.pos = createVector(0,0);
     this.pos.x = -300;
-    this.pos.y = random(10, height - height/8 - 50); //groundHeight
+    this.pos.y = random(10, height - height/8 - this.height); //groundHeight
     
   
     
@@ -26,8 +26,7 @@ class Cloud {
   }
 
   drawCloud(){
-    //fill(51);
-    //rect(this.pos.x, this.pos.y, this.width, this.height);
+    
     image(this.cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
     text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5, this.width - this.width/4);
@@ -41,6 +40,7 @@ class Cloud {
     
   }
   
+  sizeUp()
   
 
 }
