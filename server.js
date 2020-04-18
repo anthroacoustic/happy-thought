@@ -1,5 +1,5 @@
 //import pfjs
-var pjs = require('./public/libraries/p5');
+//var pjs = require('./public/libraries/p5');
 
 
 //import express to create the server
@@ -21,6 +21,7 @@ function CloudPos(id, x, y) {
   this.x = x;
   this.y = y;
   this.floatingOffset = Math.floor(Math.random() * 1000);
+  
 }
 
 
