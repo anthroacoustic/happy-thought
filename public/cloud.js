@@ -1,6 +1,7 @@
 class Cloud {
-  constructor(happy, cloudImg){
+  constructor(happy, cloudImg, id){
     
+    this.id = id;
     this.sizeUp();
     
     this.happyThought = happy;

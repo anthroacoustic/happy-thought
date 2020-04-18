@@ -13,7 +13,7 @@ let n = 1;
 
 let cloudsPosMap = [];
 
-function cloudPos(id, x, y) {
+function CloudPos(id, x, y) {
   this.id = id;
   this.x = x;
   this.y = y;  
@@ -46,9 +46,9 @@ function newConnection(socket){
     io.sockets.emit('happyThoughtFrom', happyThought)
   }
   
-  function addCloudPosition(clouds){
-    cloudPosMap.push(new CloudPos('worked', 100, 100));
-    console.log(cloudPosMap);
+  function addCloudPosition(cloudId){
+    cloudsPosMap.push(new CloudPos(cloudId, 100, 100));
+    console.log(cloudsPosMap);
   }
 
   function mouseMsg(data){
