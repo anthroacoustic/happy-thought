@@ -152,7 +152,7 @@ function drawGround() {
 
 function createInterface() {
   popUp = createDiv(["<p>Write your happy thought.</p>"]);
-  popUp.size(400, 200);
+  popUp.size(width/2, height/2);
   popUp.position(
     canvas.width / 2 - popUp.width / 2,
     canvas.height / 2 - popUp.height / 2
@@ -194,7 +194,12 @@ function showpopUp() {
 
 
 function resizeInterface(){
-  
+  submitButton.position(popUp.width - submitButton.width - popUp.width/16, popUp.height - submitButton.height - popUp.height/16);
+  popUp.size(width/2, height/2);
+  popUp.position(
+    canvas.width / 2 - popUp.width / 2,
+    canvas.height / 2 - popUp.height / 2
+  );  
 }
 
 function sendHappyThought() {
