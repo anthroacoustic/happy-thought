@@ -28,7 +28,7 @@ var io = socket(server);
 io.sockets.on('connection', newConnection);
 
 function setup(){
-  
+  createClouds();
 }
 
 function newConnection(socket){
@@ -36,19 +36,39 @@ function newConnection(socket){
 
   socket.on('mouse', mouseMsg);
 
-  socket.on('happyThought', emitHappyThought);
+  //socket.on('happyThought', emitHappyThought);
+  socket.on('happyThought', addHappyThought);
 
   //Recieves happy thought from client.
-  function emitHappyThought(happyThought){
+ /* function emitHappyThought(happyThought){
     io.sockets.emit('happyThoughtFrom', happyThought)
+  } */
+  
+  function addHappyThought(happyThought){
+    happyThoughts.append(happyThought);
+    clouds.push(new Cloud(happyThought));
+    io.sockets.emit('cloudUpdate', clouds);
   }
-
+    
+  
+  
   function draw(){
     for (cloud of clouds){
       cloud.moveCloud();
+      io.sockets.emit('cloudUpdate', clouds)
+    }
+  
+  
+  function createClouds() {
+    for (thought of happyThoughts){
+      clouds.push(new Cloud(thought));
     }
     
-  }
+     // let randomTime = random(5, 10) * 1000;
+    //setTimeout(createClouds, randomTime);
+}
+  
+  
   /*function mouseMsg(data){
     console.log(data);
     socket.broadcast.emit('mouse', data);

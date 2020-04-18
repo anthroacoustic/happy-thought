@@ -9,7 +9,7 @@ let birdRightImg;
 
 //create arrays for the bird and cloud objects
 let birds = [];
-//let clouds = [];
+let clouds = [];
 
 //create array for the happy thought text values.
 /*let happyThoughts = [
@@ -59,7 +59,7 @@ function setup() {
 
   //when the socket recieves a message it performs code
   socket.on("happyThoughtFrom", addHappyThought);
-
+  socket.on("cloudUpdate", updateClouds);
   
   createInterface();
 
@@ -124,6 +124,10 @@ function draw() {
   let randomTime = random(5, 10) * 1000;
   setTimeout(createClouds, randomTime);
 }*/
+
+function updateClouds(updatedClouds){
+  clouds = updatedClouds;
+}
 
 // destroys any clouds that are off the screen every 100 seconds
 function destroyClouds() {
