@@ -1,3 +1,6 @@
+//import pfjs
+var pjs = require('./public/libraries/p5');
+
 
 //import express to create the server
 var express = require('express');
@@ -16,7 +19,8 @@ let cloudsPosMap = [];
 function CloudPos(id, x, y) {
   this.id = id;
   this.x = x;
-  this.y = y;  
+  this.y = y;
+  this.floatingOffset = Math.floor(Math.random() * 1000);
 }
 
 
@@ -64,14 +68,13 @@ setInterval(drawing, 30);
 
 function moveClouds(){
   
-  for (cloud of CloudPosMap){
-    
-    
-  }
+  for (cloud of cloudsPosMap){
     var floating = map(noise(this.floatingOffset), 0,1, -.5, .5);
-    this.pos.x += .5;
-    this.pos.y += floating;
-    this.floatingOffset += .001;
+    cloud.x += .5;
+    cloud.y += floating;
+    cloud.floatingOffset += .001;
+  }
+    
   
 }
 
