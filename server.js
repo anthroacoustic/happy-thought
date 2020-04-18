@@ -49,6 +49,7 @@ function newConnection(socket){
   function addCloudPosition(cloudId){
     cloudsPosMap.push(new CloudPos(cloudId, 100, 100));
     console.log(cloudsPosMap);
+    
   }
 
   function mouseMsg(data){
@@ -60,6 +61,20 @@ function newConnection(socket){
 }
 
 setInterval(drawing, 30);
+
+function moveClouds(){
+  
+  for (cloud of CloudPosMap){
+    
+    
+  }
+    var floating = map(noise(this.floatingOffset), 0,1, -.5, .5);
+    this.pos.x += .5;
+    this.pos.y += floating;
+    this.floatingOffset += .001;
+  
+}
+
 
 function drawing(){
  

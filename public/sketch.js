@@ -128,11 +128,12 @@ function draw() {
 //CLOUDS
 // clouds are created at random time intervals
 function createClouds() {
-  clouds.push(new Cloud(random(happyThoughts), cloudImg, id));
+  clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
+  cloudIdCounter += 1;
   
   
   socket.emit("cloudUpdate", clouds[clouds.length -1].id);
-
+  console.log(clouds);
   
   let randomTime = random(5, 10) * 1000;
   
