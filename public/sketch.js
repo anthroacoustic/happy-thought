@@ -22,6 +22,7 @@ let happyThoughts = [
 let userInput;
 let submitButton;
 let popUp;
+let button;
 
 //preload all of the image files into their variables.
 function preload() {
@@ -46,7 +47,7 @@ function preload() {
 //setting the skech up
 function setup() {
   
-  canvas = createCanvas(600, 400);
+  canvas = createCanvas(windowWidth, windowHeight);
   
   canvas.style("z-index", "-1");
 
@@ -73,10 +74,10 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  resizeInterface();
   for (bird of birds){
     bird.sizeUp();
   }
-  
   for (cloud of clouds){
     cloud.sizeUp();
   }
@@ -177,7 +178,7 @@ function createInterface() {
   popUp.child(userInput);
   popUp.child(submitButton);
 
-  let button = createButton("what is your happy thought");
+  button = createButton("what is your happy thought");
   button.size(width/4, height/16)
   button.position((width/3)* 2, height - height/16 - height/32);
   button.mousePressed(showpopUp);
@@ -194,12 +195,16 @@ function showpopUp() {
 
 
 function resizeInterface(){
+  button.size(width/4, height/16)
+  button.position((width/3)* 2, height - height/16 - height/32);
   submitButton.position(popUp.width - submitButton.width - popUp.width/16, popUp.height - submitButton.height - popUp.height/16);
   popUp.size(width/2, height/2);
   popUp.position(
     canvas.width / 2 - popUp.width / 2,
     canvas.height / 2 - popUp.height / 2
   );  
+  userInput.size(popUp.width - popUp.width/8, 100);
+  
 }
 
 function sendHappyThought() {
