@@ -2,6 +2,7 @@
 //import express to create the server
 var express = require('express');
 var app = express();
+
 //let heroku set the port
 var port = process.env.PORT || 8080;
 var server = app.listen(port);
@@ -30,10 +31,16 @@ function newConnection(socket){
   socket.on('mouse', mouseMsg);
 
   socket.on('happyThought', emitHappyThought);
+  
+  socket.on('cloudUpdate', logClouds);
 
   //Recieves happy thought from client.
   function emitHappyThought(happyThought){
     io.sockets.emit('happyThoughtFrom', happyThought)
+  }
+  
+  function logClouds(clouds){
+    console.log(clouds)
   }
 
   function mouseMsg(data){

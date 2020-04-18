@@ -123,6 +123,8 @@ function draw() {
 function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
   let randomTime = random(5, 10) * 1000;
+  socket.emit("cloudUpdate", 'hello');
+  //socket.emit("happyThought", userInput.value());
   setTimeout(createClouds, randomTime);
 }
 
