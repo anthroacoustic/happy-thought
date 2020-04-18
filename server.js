@@ -5,6 +5,10 @@ var app = express();
 //let heroku set the port
 var port = process.env.PORT || 8080;
 var server = app.listen(port);
+let n = 1;
+
+let cloudPos =[];
+
 
 
 
@@ -40,8 +44,12 @@ function newConnection(socket){
   }
 }
 
-function draw(){
-  console.log('drawing');
+setInterval(drawing, 30);
+
+function drawing(){
+ 
 }
+
+
 
 //Node Mom makes it so you don't have to restart the server every time...
