@@ -10,6 +10,7 @@ let birdRightImg;
 //create arrays for the bird and cloud objects
 let birds = [];
 let clouds = [];
+let cloudsPosMap = [];
 
 //create array for the happy thought text values.
 let happyThoughts = [
@@ -132,10 +133,14 @@ function draw() {
 // clouds are created at random time intervals
 function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
+  
+  cloudsPos
+  
   let randomTime = random(5, 10) * 1000;
   socket.emit("cloudUpdate", clouds[0]);
   //socket.emit("happyThought", userInput.value());
   setTimeout(createClouds, randomTime);
+
 }
 
 // destroys any clouds that are off the screen every 100 seconds
