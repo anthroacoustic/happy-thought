@@ -10,7 +10,7 @@ let birdRightImg;
 //create arrays for the bird and cloud objects
 let birds = [];
 let clouds = [];
-let cloudsPosMap = [];
+
 
 //create array for the happy thought text values.
 let happyThoughts = [
@@ -119,11 +119,6 @@ function draw() {
     }
   }
 }
-
-
-
-
-
 
 
 

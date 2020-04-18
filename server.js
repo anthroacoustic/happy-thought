@@ -9,8 +9,15 @@ var server = app.listen(port);
 let n = 1;
 
 
+//create CloudPos
 
+let cloudsPosMap = [];
 
+function cloudPos(id, x, y) {
+  this.id = id;
+  this.x = x;
+  this.y = y;  
+}
 
 
 //tell the server to serve everything that is in the public folder
@@ -32,15 +39,16 @@ function newConnection(socket){
 
   socket.on('happyThought', emitHappyThought);
   
-  socket.on('cloudUpdate', logClouds);
+  socket.on('cloudUpdate', addCloudPosition);
 
   //Recieves happy thought from client.
   function emitHappyThought(happyThought){
     io.sockets.emit('happyThoughtFrom', happyThought)
   }
   
-  function logClouds(clouds){
-    console.log(clouds)
+  function addCloudPosition(clouds){
+    cloudPosMap.push(new CloudPos('worked', 100, 100));
+    console.log(cloudPosMap);
   }
 
   function mouseMsg(data){
