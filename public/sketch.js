@@ -66,7 +66,7 @@ function setup() {
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
  
-  createClouds();
+  //createClouds();
   setTimeout(destroyClouds, 10000);
 }
 

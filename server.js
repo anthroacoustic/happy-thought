@@ -50,23 +50,24 @@ function newConnection(socket){
     io.sockets.emit('cloudUpdate', clouds);
   }
     
-  
+}
   
   function draw(){
     for (cloud of clouds){
       cloud.moveCloud();
-      io.sockets.emit('cloudUpdate', clouds)
+      io.sockets.emit('cloudUpdate', clouds);
     }
   
+  }
   
   function createClouds() {
     for (thought of happyThoughts){
       clouds.push(new Cloud(thought));
-    }
+    }  
     
      // let randomTime = random(5, 10) * 1000;
     //setTimeout(createClouds, randomTime);
-}
+  }
   
   
   /*function mouseMsg(data){
@@ -76,6 +77,6 @@ function newConnection(socket){
     //io.sockets.emit('mouse', 'data');
   }*/
 
-}
+
 
 //Node Mom makes it so you don't have to restart the server every time...
