@@ -12,11 +12,11 @@ let birds = [];
 let clouds = [];
 
 //create array for the happy thought text values.
-/*let happyThoughts = [
+let happyThoughts = [
   "Cease the day!",
   "Spring!",
   "There is beauty all around us."
-];*/
+];
 
 //create variables for the HTML elements that will appear in the user interface
 let userInput;
@@ -58,16 +58,16 @@ function setup() {
   socket = io();
 
   //when the socket recieves a message it performs code
-  //socket.on("happyThoughtFrom", addHappyThought);
-  socket.on("cloudUpdate", updateClouds);
+  socket.on("happyThoughtFrom", addHappyThought);
+
   
   createInterface();
 
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
  
-  //createClouds();
-  //setTimeout(destroyClouds, 10000);
+  createClouds();
+  setTimeout(destroyClouds, 10000);
 }
 
 
@@ -93,8 +93,8 @@ function draw() {
   //update and draw all the clouds();
 
   for (cloud of clouds) {
-    //cloud.moveCloud();
-    cloud.drawCloud(cloudImg);
+    cloud.moveCloud();
+    cloud.drawCloud();
   }
   
   //draw the tree
@@ -118,15 +118,11 @@ function draw() {
   }
 }
 
-// clouds are created at random time intervals MOVED TO SERVEFR
-/*function createClouds() {
+// clouds are created at random time intervals
+function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
   let randomTime = random(5, 10) * 1000;
   setTimeout(createClouds, randomTime);
-}*/
-
-function updateClouds(updatedClouds){
-  clouds = updatedClouds;
 }
 
 // destroys any clouds that are off the screen every 100 seconds
@@ -201,7 +197,6 @@ function resizeInterface(){
   
 }
 
-
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
   socket.emit("happyThought", userInput.value());
@@ -213,12 +208,11 @@ function sendHappyThought() {
   console.log(happyThoughts);
 }
 
-/*
 function addHappyThought(happyThought) {
   append(happyThoughts, happyThought);
   console.log(happyThoughts);
 }
-*/
+
 
 
 /*

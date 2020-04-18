@@ -1,5 +1,5 @@
 class Cloud {
-  constructor(happy){
+  constructor(happy, cloudImg){
     
     this.sizeUp();
     
@@ -8,7 +8,7 @@ class Cloud {
     this.tWidth = textWidth(this.happyThought);
     
     
-    //this.cloudImg = cloudImg;
+    this.cloudImg = cloudImg;
     
     this.floatingOffset = random(1000);
     
@@ -24,9 +24,9 @@ class Cloud {
     //this.mass = 10;
   }
 
-  drawCloud(cloudImg){
+  drawCloud(){
     
-    image(cloudImg, this.pos.x, this.pos.y, this.width, this.height);
+    image(this.cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
     text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5, this.width - this.width/4);
   }
