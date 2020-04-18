@@ -40,4 +40,8 @@ function newConnection(socket){
   }
 }
 
+function draw(){
+  console.log('drawing');
+}
+
 //Node Mom makes it so you don't have to restart the server every time...
