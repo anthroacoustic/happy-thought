@@ -1,4 +1,3 @@
-
 //import express to create the server
 var express = require('express');
 var app = express();
@@ -27,9 +26,10 @@ var io = socket(server);
 // when the 'connection' event happens, I want it perform 'newConnection
 io.sockets.on('connection', newConnection);
 
-function setup(){
+//function setup(){
+  //console.log('setup');
   createClouds();
-}
+//}
 
 function newConnection(socket){
   console.log('new connection: ' + socket.id);
@@ -61,6 +61,7 @@ function newConnection(socket){
   }
   
   function createClouds() {
+    console.log('createClouds()');
     for (thought of happyThoughts){
       clouds.push(new Cloud(thought));
     }  

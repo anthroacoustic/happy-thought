@@ -58,7 +58,7 @@ function setup() {
   socket = io();
 
   //when the socket recieves a message it performs code
-  socket.on("happyThoughtFrom", addHappyThought);
+  //socket.on("happyThoughtFrom", addHappyThought);
   socket.on("cloudUpdate", updateClouds);
   
   createInterface();
@@ -67,7 +67,7 @@ function setup() {
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
  
   //createClouds();
-  setTimeout(destroyClouds, 10000);
+  //setTimeout(destroyClouds, 10000);
 }
 
 
@@ -94,7 +94,7 @@ function draw() {
 
   for (cloud of clouds) {
     //cloud.moveCloud();
-    cloud.drawCloud();
+    cloud.drawCloud(cloudImg);
   }
   
   //draw the tree
@@ -201,6 +201,7 @@ function resizeInterface(){
   
 }
 
+
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
   socket.emit("happyThought", userInput.value());
@@ -212,11 +213,12 @@ function sendHappyThought() {
   console.log(happyThoughts);
 }
 
+/*
 function addHappyThought(happyThought) {
   append(happyThoughts, happyThought);
   console.log(happyThoughts);
 }
-
+*/
 
 
 /*
