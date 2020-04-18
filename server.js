@@ -1,3 +1,8 @@
+
+
+
+
+
 //import express to create the server
 var express = require('express');
 var app = express();
@@ -12,11 +17,11 @@ let happyThoughts = [
   "Spring!",
   "There is beauty all around us."
 ]
-
+console.log('START');
 
 //tell the server to serve everything that is in the public folder
 app.use(express.static('public'));
-console.log("my socket server is running")
+
 
 //import socket.io to create the socket 'io'
 var socket = require('socket.io');
@@ -81,3 +86,6 @@ function newConnection(socket){
 
 
 //Node Mom makes it so you don't have to restart the server every time...
+
+
+
