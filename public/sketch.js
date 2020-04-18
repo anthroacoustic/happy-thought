@@ -9,14 +9,14 @@ let birdRightImg;
 
 //create arrays for the bird and cloud objects
 let birds = [];
-let clouds = [];
+//let clouds = [];
 
 //create array for the happy thought text values.
-let happyThoughts = [
+/*let happyThoughts = [
   "Cease the day!",
   "Spring!",
   "There is beauty all around us."
-];
+];*/
 
 //create variables for the HTML elements that will appear in the user interface
 let userInput;
@@ -93,7 +93,7 @@ function draw() {
   //update and draw all the clouds();
 
   for (cloud of clouds) {
-    cloud.moveCloud();
+    //cloud.moveCloud();
     cloud.drawCloud();
   }
   
@@ -118,12 +118,12 @@ function draw() {
   }
 }
 
-// clouds are created at random time intervals
-function createClouds() {
+// clouds are created at random time intervals MOVED TO SERVEFR
+/*function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
   let randomTime = random(5, 10) * 1000;
   setTimeout(createClouds, randomTime);
-}
+}*/
 
 // destroys any clouds that are off the screen every 100 seconds
 function destroyClouds() {

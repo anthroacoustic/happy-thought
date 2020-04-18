@@ -6,6 +6,13 @@ var app = express();
 var port = process.env.PORT || 8080;
 var server = app.listen(port);
 
+let clouds = []
+
+let happyThoughts = [
+  "Cease the day!",
+  "Spring!",
+  "There is beauty all around us."
+]
 
 
 //tell the server to serve everything that is in the public folder
@@ -20,6 +27,10 @@ var io = socket(server);
 // when the 'connection' event happens, I want it perform 'newConnection
 io.sockets.on('connection', newConnection);
 
+function setup(){
+  
+}
+
 function newConnection(socket){
   console.log('new connection: ' + socket.id);
 
@@ -32,12 +43,19 @@ function newConnection(socket){
     io.sockets.emit('happyThoughtFrom', happyThought)
   }
 
-  function mouseMsg(data){
+  function draw(){
+    for (cloud of clouds){
+      cloud.moveCloud();
+    }
+    
+  }
+  /*function mouseMsg(data){
     console.log(data);
     socket.broadcast.emit('mouse', data);
     //if you want to include the client that sent the data.
     //io.sockets.emit('mouse', 'data');
-  }
+  }*/
+
 }
 
 //Node Mom makes it so you don't have to restart the server every time...
