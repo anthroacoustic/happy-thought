@@ -119,11 +119,21 @@ function draw() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+//CLOUDS
 // clouds are created at random time intervals
 function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg));
   let randomTime = random(5, 10) * 1000;
-  socket.emit("cloudUpdate", 'hello');
+  socket.emit("cloudUpdate", clouds[0]);
   //socket.emit("happyThought", userInput.value());
   setTimeout(createClouds, randomTime);
 }
@@ -139,12 +149,22 @@ function destroyClouds() {
   setTimeout(destroyClouds, 10000);
 }
 
+
+
+
+
+
 //draws the ground
 function drawGround() {
   noStroke();
   fill(141, 179, 44);
   rect(0, height - height / 8, width, height / 8);
 }
+
+
+
+
+
 
 
 
