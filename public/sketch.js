@@ -161,7 +161,7 @@ function createInterface() {
   popUp.hide();
 
   userInput = createElement("textarea", "");
-  userInput.size(popUp.width - popUp.width/8, 100);
+  userInput.size(popUp.width / 1.5, 100);
   userInput.style("display", "block");
   userInput.style("margin-right", "auto");
   userInput.style("margin-left", "auto");
@@ -169,7 +169,7 @@ function createInterface() {
   userInput.hide();
 
   submitButton = createButton("submit");
-  submitButton.position(popUp.width - submitButton.width - popUp.width/16, popUp.height - submitButton.height - popUp.height/16);
+  submitButton.position(popUp.width - submitButton.width - 60, height / 2 - 40);
   submitButton.mousePressed(sendHappyThought);
   submitButton.hide();
   submitButton.style("align-self", "right");
@@ -178,23 +178,17 @@ function createInterface() {
   popUp.child(submitButton);
 
   let button = createButton("what is your happy thought");
-  button.size(width/4, height/16)
-  button.position((width/3)* 2, height - height/16 - height/32);
+  button.size(width/4, height)
+  button.position(600, 375);
   button.mousePressed(showpopUp);
 }
 
-
 function showpopUp() {
   fill(51);
-  rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
+  rect(height / 2 - 100, width / 2 - 100, 400, 400);
   popUp.show();
   userInput.show();
   submitButton.show();
-}
-
-
-function resizeInterface(){
-  
 }
 
 function sendHappyThought() {
@@ -212,9 +206,6 @@ function addHappyThought(happyThought) {
   append(happyThoughts, happyThought);
   console.log(happyThoughts);
 }
-
-
-
 /*
 function mouseDragged(){
   console.log('sending: ' + mouseX + ', ' + mouseY);
