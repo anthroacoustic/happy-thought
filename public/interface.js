@@ -37,7 +37,7 @@ class Interface {
     this.submitButton.style("align-self", "right");
 
     //closePopUpButton
-    this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height + this.popUp.height/16);
+    this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height + this.popUp.height/32);
     this.closePopUpButton.style("align-self", "right");
     
     
