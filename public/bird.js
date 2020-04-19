@@ -21,6 +21,7 @@ class Bird {
     this.width = width/16;
     this.height = height/16
     this.pos.y = height - height/8 - this.height; //groundHeight
+   
   }
 
   drawBird(){
