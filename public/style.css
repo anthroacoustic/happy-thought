@@ -1,3 +1,14 @@
 #popUp {
   background-color: #8DB32C;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;    
+
+}
+
+#close {
+  align-self: right;
+  
 }
