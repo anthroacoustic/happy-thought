@@ -75,7 +75,7 @@ function setup() {
   socket.on("happyThoughtFrom", addHappyThought);
 
   interface = new Interface(canvas.width, canvas.height);
-  
+  interface.button.mousePressed(interface.showPopUp);
 
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
