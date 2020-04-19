@@ -16,7 +16,7 @@ let birds = [];
 let clouds = [];
 let cloudIdCounter = 0;
 
-let cloudDrawTimer = 0;
+let cloudDrawTimer = 151;
 
 //create array for the happy thought text values.
 let happyThoughts = [
@@ -82,8 +82,7 @@ function setup() {
 
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
- 
-  createClouds();
+
   
   setTimeout(destroyClouds, 10000);
 
@@ -104,7 +103,8 @@ function draw() {
   image(mountainImg, 0, height - height/4 - height/8, width, height/4);
 
   //update and draw all the clouds();
-
+  createClouds();
+  
   for (cloud of clouds) {
     cloud.moveCloud();
     cloud.drawCloud();
@@ -149,13 +149,18 @@ function windowResized() {
   
 }
 
+
+
+
+
+
 //
 //CLOUD MANAGEMENT-------------------------------------------------------------------------------
 //
 // clouds are created at random time intervals
 function createClouds() {
   cloudDrawTimer +=1;
-  if (cloudDrawTimer > 150){
+  if (cloudDrawTimer > 300){
     clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
     cloudIdCounter += 1;
     cloudDrawTimer = 0;
@@ -182,82 +187,18 @@ function destroyClouds() {
 
 
 //
-//INTERFACE--------------------------------------------------------------------------
+//INTERFACE FUNCTIONS--------------------------------------------------------------------------
 //
 
 function showPopUp() {
-  fill(51);
-  rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
+ // fill(51);
+ // rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
+  //interface.resize();
   interface.popUp.show();
   interface.userInput.show();
   interface.submitButton.show();
+  interface.resize(canvas.width, canvas.height);
 }
-
-
-
-
-
-/*
-
-function createInterface() {
-  popUp = createDiv(["<p>Write your happy thought.</p>"]);
-  popUp.size(width/2, height/2);
-  popUp.position(
-    canvas.width / 2 - popUp.width / 2,
-    canvas.height / 2 - popUp.height / 2
-  );
-  popUp.style("background-color", "#8DB32C");
-  popUp.hide();
-
-  userInput = createElement("textarea", "");
-  userInput.size(popUp.width - popUp.width/8, 100);
-  userInput.style("display", "block");
-  userInput.style("margin-right", "auto");
-  userInput.style("margin-left", "auto");
-  userInput.attribute("maxlength", "60");
-  userInput.hide();
-
-  submitButton = createButton("submit");
-  submitButton.position(popUp.width - submitButton.width - popUp.width/16, popUp.height - submitButton.height - popUp.height/16);
-  submitButton.mousePressed(sendHappyThought);
-  submitButton.hide();
-  submitButton.style("align-self", "right");
-
-  popUp.child(userInput);
-  popUp.child(submitButton);
-
-  button = createButton("what is your happy thought");
-  button.size(width/4, height/16)
-  button.position((width/3)* 2, height - height/16 - height/32);
-  button.mousePressed(showpopUp);
-}
-
-
-function showpopUp() {
-  fill(51);
-  rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
-  popUp.show();
-  userInput.show();
-  submitButton.show();
-}
-
-function resizeInterface(){
-  button.size(width/4, height/16)
-  button.position((width/3)* 2, height - height/16 - height/32);
-  submitButton.position(popUp.width - submitButton.width - popUp.width/16, popUp.height - submitButton.height - popUp.height/16);
-  popUp.size(width/2, height/2);
-  popUp.position(
-    canvas.width / 2 - popUp.width / 2,
-    canvas.height / 2 - popUp.height / 2
-  );  
-  userInput.size(popUp.width - popUp.width/8, 100);
-  
-}
-
-*/
-
-
-
 
 
 //
