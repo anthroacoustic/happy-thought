@@ -12,7 +12,7 @@ class Interface {
    
   initialize(canvasWidth, canvasHeight){
     //initialize popUp Div
-    this.popUp.size(width/2, height/2);
+    this.popUp.size(width/2, canvasHeight/4);
     console.log(this.popUp);
     this.popUp.position(
      // canvas.width / 2 - popUp.width / 2,
@@ -21,17 +21,18 @@ class Interface {
       canvasWidth / 2 - this.popUp.width / 2,
     );
     this.popUp.style("background-color", "#8DB32C");
+    this.popUp.style("padding", "2em")
    
     this.popUp.hide();
   
     this.popUpText = createP('Write here:');
     
     //initialize userInput
-    this.userInput.size(this.popUp.width - this.popUp.width/8, 100);
+    //this.userInput.size(this.popUp.width - this.popUp.width/8, 200);
     this.userInput.style("display", "block");
-    this.userInput.style("margin-right", "auto");
-    this.userInput.style("margin-left", "auto");
+    this.userInput.style("align-self", "acenter");
     this.userInput.attribute("maxlength", "60");
+    //this.userInput.size(width - width/2, height - height/6);
     //this.userInput.hide();
 
     //initialize submitButton
@@ -44,7 +45,7 @@ class Interface {
     this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height);
     //this.closePopUpButton.style("align-self", "right");
     
-    this.popUpText.style()
+    //this.popUpText.position(width/16)
     
     this.button = createButton("what is your happy thought");
     this.button.size(width/4, height/16)
