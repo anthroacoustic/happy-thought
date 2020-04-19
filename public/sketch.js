@@ -62,6 +62,7 @@ function setup() {
   
   //Create a canvas that is the same size as the browser window.
   canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
   //Set the z-index to -1 so DOM elements will appear above the sketch. 
   canvas.style("z-index", "-1");
   //Set the framerate to 30
