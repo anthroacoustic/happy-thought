@@ -1,3 +1,6 @@
+//
+//VARIABLES--------------------------------------------------------------------------------------
+//
 //create variables to hold the socket connection and canvas.
 let socket;
 let canvas;
@@ -27,7 +30,10 @@ let submitButton;
 let popUp;
 let button;
 
+
 //preload all of the image files into their variables.
+//NOTE: the URLS are configured to work in glitch. When I move to heroku, I will need to upload files to an
+// asset folder and change the URLS to a filepath.
 function preload() {
   cloudImg = loadImage(
     "https://cdn.glitch.com/cdcbe618-42b0-409d-81a0-d99dd65e70b9%2FCloud.png?v=1586991464337"
@@ -46,12 +52,14 @@ function preload() {
   );
 }
 
-
-//setting the skech up
+//
+// SETUP AND EVENTS ------------------------------------------------------------------------------------
+//
 function setup() {
   
+  //Create a canvas that is the same size as the browser window.
   canvas = createCanvas(windowWidth, windowHeight);
-  
+  //Set the z-index to -1 so DOM elements will appear above the sketch. 
   canvas.style("z-index", "-1");
 
   //create a socket that connects to the server
@@ -64,7 +72,6 @@ function setup() {
   //when the socket recieves a message it performs code
   socket.on("happyThoughtFrom", addHappyThought);
 
-  
   createInterface();
 
   //creates the players bird - REFACTOR
@@ -73,9 +80,6 @@ function setup() {
   createClouds();
   setTimeout(destroyClouds, 10000);
 }
-
-
-
 
 
 function draw() {
@@ -207,7 +211,6 @@ function showpopUp() {
   submitButton.show();
 }
 
-
 function resizeInterface(){
   button.size(width/4, height/16)
   button.position((width/3)* 2, height - height/16 - height/32);
@@ -220,6 +223,9 @@ function resizeInterface(){
   userInput.size(popUp.width - popUp.width/8, 100);
   
 }
+
+
+
 
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
