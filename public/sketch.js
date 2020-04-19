@@ -1,3 +1,4 @@
+//create variables to hold the socket connection and canvas.
 let socket;
 let canvas;
 
@@ -74,16 +75,7 @@ function setup() {
 }
 
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  resizeInterface();
-  for (bird of birds){
-    bird.sizeUp();
-  }
-  for (cloud of clouds){
-    cloud.sizeUp();
-  }
-}
+
 
 
 function draw() {
@@ -103,13 +95,18 @@ function draw() {
   //draw the tree
   image(treeImg, (width / 4) * 3, height - height/8 - height/3, width/6, height/3);
 
+  
+  //draw the ground
+  noStroke();
+  fill(141, 179, 44);
+  rect(0, height - height / 8, width, height / 8);
+  
+  
   //update and draw all the bords
   for (bird of birds) {
     bird.update();
     bird.drawBird();
   }
-
-  drawGround();
 
   //if the user presses the left or right arrow, the bird will move to the left or right
   if (keyIsPressed === true) {
@@ -122,10 +119,20 @@ function draw() {
 }
 
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  resizeInterface();
+  for (bird of birds){
+    bird.resize();
+  }
+  for (cloud of clouds){
+    cloud.resize();
+  }
+}
 
-
-
-//CLOUDS
+//
+//CLOUD MANAGEMENT-------------------------------------------------------------------------------
+//
 // clouds are created at random time intervals
 function createClouds() {
   clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
@@ -154,28 +161,9 @@ function destroyClouds() {
 }
 
 
-
-
-
-
-//draws the ground
-function drawGround() {
-  noStroke();
-  fill(141, 179, 44);
-  rect(0, height - height / 8, width, height / 8);
-}
-
-
-
-
-
-
-
-
-
-
-
-//INTERFACE
+//
+//INTERFACE--------------------------------------------------------------------------
+//
 
 function createInterface() {
   popUp = createDiv(["<p>Write your happy thought.</p>"]);
@@ -248,18 +236,4 @@ function addHappyThought(happyThought) {
   append(happyThoughts, happyThought);
   console.log(happyThoughts);
 }
-
-
-
-/*
-function mouseDragged(){
-  console.log('sending: ' + mouseX + ', ' + mouseY);
-
-  var data = {
-    x: mouseX,
-    y: mouseY
-  }
-  socket.emit('mouse', data);
-}
-*/
 
