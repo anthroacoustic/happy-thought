@@ -1,7 +1,7 @@
 class Interface {
   constructor(canvasWidth, canvasHeight){
   
-  this.popUp = createDiv(["<p>Write your happy thought.</p>"]);
+  this.popUp = createDiv();
   this.userInput = createElement("textarea", "");
   this.submitButton = createButton("submit");
   this.closePopUpButton = createButton("close");
@@ -20,6 +20,7 @@ class Interface {
       canvasWidth / 2 - this.popUp.width / 2,
     );
     this.popUp.style("background-color", "#8DB32C");
+   
     this.popUp.hide();
   
     //initialize userInput
@@ -37,8 +38,8 @@ class Interface {
     this.submitButton.style("align-self", "right");
 
     //closePopUpButton
-    this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height + this.popUp.height/32);
-    this.closePopUpButton.style("align-self", "right");
+    this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height);
+    //this.closePopUpButton.style("align-self", "right");
     
     
     this.button = createButton("what is your happy thought");
