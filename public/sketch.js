@@ -128,13 +128,14 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  interface.resize();
   for (bird of birds){
     bird.resize();
   }
   for (cloud of clouds){
     cloud.resize();
   }
+  interface.resize(canvas.width, canvas.height);
+  
 }
 
 //
