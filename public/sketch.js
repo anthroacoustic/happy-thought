@@ -160,7 +160,7 @@ function windowResized() {
 // clouds are created at random time intervals
 function createClouds() {
   cloudDrawTimer +=1;
-  if (cloudDrawTimer > 300){
+  if (cloudDrawTimer > 450){
     clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
     cloudIdCounter += 1;
     cloudDrawTimer = 0;
@@ -195,8 +195,8 @@ function showPopUp() {
  // rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
   //interface.resize();
   interface.popUp.show();
-  interface.userInput.show();
-  interface.submitButton.show();
+  //interface.userInput.show();
+  //interface.submitButton.show();
   interface.resize(canvas.width, canvas.height);
 }
 
