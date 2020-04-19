@@ -1,14 +1,32 @@
 #popUp {
   background-color: #8DB32C;
-   position: absolute;
+ 
+  position: absolute;
   top: 50%;
   left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;    
+  margin-top: -50px;
+  margin-left: -25%;  
+  width: 50%;
+  padding: 2.5%;
 
 }
 
 #close {
-  align-self: right;
+  position: relative;
+  float: right;
+  background-color: purple;
+  margin-top: -5%
   
+  
+}
+
+#submit {
+  position: relative;
+  float: right;
+  background-color: purple;
+  
+}
+
+#area {
+  width:98.75%
 }
