@@ -6,6 +6,7 @@ class Interface {
   this.submitButton = createButton("submit");
   this.closePopUpButton = createButton("close");
   this.initialize(canvasWidth, canvasHeight);
+  this.popUpText;
   
   }
    
@@ -23,6 +24,8 @@ class Interface {
    
     this.popUp.hide();
   
+    this.popUpText = createP('Write here:');
+    
     //initialize userInput
     this.userInput.size(this.popUp.width - this.popUp.width/8, 100);
     this.userInput.style("display", "block");
@@ -41,15 +44,18 @@ class Interface {
     this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height);
     //this.closePopUpButton.style("align-self", "right");
     
+    this.popUpText.style()
     
     this.button = createButton("what is your happy thought");
     this.button.size(width/4, height/16)
     this.button.position((width/3)* 2, height - height/16 - height/32);
     
     //assign Children.
+    this.popUp.child(this.popUpText);
     this.popUp.child(this.submitButton);
     this.popUp.child(this.userInput);
     this.popUp.child(this.closePopUpButton);
+    
   }
   
   resize(canvasWidth, canvasHeight){
@@ -63,6 +69,9 @@ class Interface {
     this.button.size(width/4, height/16);
     this.submitButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.popUp.height - this.submitButton.height - this.popUp.height/16);
     this.button.position((width/3)* 2, height - height/16 - height/32);  
+    this.closePopUpButton.position(this.popUp.width - this.submitButton.width - this.popUp.width/16, this.closePopUpButton.height);
+
+  
   }
 
 }
