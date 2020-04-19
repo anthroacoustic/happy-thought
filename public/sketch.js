@@ -23,14 +23,16 @@ let happyThoughts = [
   "Spring!",
   "There is beauty all around us."
 ];
-
+//
 //create variables for the HTML elements that will appear in the user interface
+let interface;
+/*
 let userInput;
 let submitButton;
 let popUp;
 let button;
-
-
+*/
+//
 //preload all of the image files into their variables.
 //NOTE: the URLS are configured to work in glitch. When I move to heroku, I will need to upload files to an
 // asset folder and change the URLS to a filepath.
@@ -72,7 +74,8 @@ function setup() {
   //when the socket recieves a message it performs code
   socket.on("happyThoughtFrom", addHappyThought);
 
-  createInterface();
+  interface = new Interface(canvas.width, canvas.height);
+  
 
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
@@ -125,7 +128,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  resizeInterface();
+  interface.resize();
   for (bird of birds){
     bird.resize();
   }
@@ -168,6 +171,7 @@ function destroyClouds() {
 //
 //INTERFACE--------------------------------------------------------------------------
 //
+/*
 
 function createInterface() {
   popUp = createDiv(["<p>Write your happy thought.</p>"]);
@@ -224,9 +228,11 @@ function resizeInterface(){
   
 }
 
+*/
 
-
-
+//
+// SERVER COMMUNICATION FUNTIONS --------------------------------------------------------------------
+//
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
   socket.emit("happyThought", userInput.value());
