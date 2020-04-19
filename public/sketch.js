@@ -88,7 +88,7 @@ function setup() {
 
   interface.button.mousePressed(showPopUp);
   interface.submitButton.mousePressed(sendHappyThought);
-
+  interface.closePopUpButton.mousePressed(hidePopUp);
   
 }
 
@@ -198,6 +198,10 @@ function showPopUp() {
   //interface.userInput.show();
   //interface.submitButton.show();
   interface.resize(canvas.width, canvas.height);
+}
+
+function hidePopUp(){
+  interface.popUp.hide();
 }
 
 
