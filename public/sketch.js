@@ -16,6 +16,7 @@ let birds = [];
 let clouds = [];
 let cloudIdCounter = 0;
 
+let cloudDrawTimer = 0;
 
 //create array for the happy thought text values.
 let happyThoughts = [
@@ -63,7 +64,9 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   //Set the z-index to -1 so DOM elements will appear above the sketch. 
   canvas.style("z-index", "-1");
-
+  //Set the framerate to 30
+  frameRate(30);
+  
   //create a socket that connects to the server
   //connects to a local host
   //socket = io.connect('http://localhost:3000');
@@ -81,20 +84,13 @@ function setup() {
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
  
   createClouds();
+  
   setTimeout(destroyClouds, 10000);
 
+  interface.button.mousePressed(showPopUp);
+  interface.submitButton.mousePressed(sendHappyThought);
 
   
-  interface.button.mousePressed(showPopUp);
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -158,17 +154,18 @@ function windowResized() {
 //
 // clouds are created at random time intervals
 function createClouds() {
-  clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
-  cloudIdCounter += 1;
+  cloudDrawTimer +=1;
+  if (cloudDrawTimer > 150){
+    clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
+    cloudIdCounter += 1;
+    cloudDrawTimer = 0;
+  }
   
   
-  socket.emit("cloudUpdate", clouds[clouds.length -1].id);
-  console.log(clouds);
-  
-  let randomTime = random(5, 10) * 1000;
+  //let randomTime = random(5, 10) * 1000;
   
   //socket.emit("happyThought", userInput.value());
-  setTimeout(createClouds, randomTime);
+  //setTimeout(createClouds, randomTime);
 
 }
 
