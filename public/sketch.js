@@ -75,14 +75,29 @@ function setup() {
   socket.on("happyThoughtFrom", addHappyThought);
 
   interface = new Interface(canvas.width, canvas.height);
-  interface.button.mousePressed(interface.showPopUp);
+  
 
   //creates the players bird - REFACTOR
   birds.push(new Bird(random(width), birdRightImg, birdLeftImg));
  
   createClouds();
   setTimeout(destroyClouds, 10000);
+
+
+  
+  interface.button.mousePressed(showPopUp);
+
+
+
+
+
+
+
+
+
 }
+
+
 
 
 function draw() {
@@ -172,6 +187,19 @@ function destroyClouds() {
 //
 //INTERFACE--------------------------------------------------------------------------
 //
+
+function showPopUp() {
+  fill(51);
+  rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
+  interface.popUp.show();
+  interface.userInput.show();
+  interface.submitButton.show();
+}
+
+
+
+
+
 /*
 
 function createInterface() {
@@ -231,17 +259,21 @@ function resizeInterface(){
 
 */
 
+
+
+
+
 //
 // SERVER COMMUNICATION FUNTIONS --------------------------------------------------------------------
 //
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
-  socket.emit("happyThought", userInput.value());
+  socket.emit("happyThought", interface.userInput.value());
 
-  userInput.value("");
-  popUp.hide();
-  userInput.hide();
-  submitButton.hide();
+  interface.userInput.value("");
+  interface.popUp.hide();
+  interface.userInput.hide();
+  interface.submitButton.hide();
   console.log(happyThoughts);
 }
 
