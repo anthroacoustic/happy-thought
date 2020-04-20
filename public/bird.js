@@ -4,7 +4,6 @@ class Bird {
     this.pos = createVector(0,0);
     this.resize();
     
-    
     this.pos.x = x;
     //this.pos.y = height - height/8 - this.height; //groundHeight
     this.direction = 'right';
