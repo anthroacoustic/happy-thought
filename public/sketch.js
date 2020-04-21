@@ -26,7 +26,9 @@ let happyThoughts = [
 ];
 //
 //create variables for the HTML elements that will appear in the user interface
-let interface;
+//let interface;
+
+let popUp;
 /*
 let userInput;
 let submitButton;
@@ -78,7 +80,7 @@ function setup() {
   //when the socket recieves a message it performs code
   socket.on("happyThoughtFrom", addHappyThought);
 
-  interface = new Interface(canvas.width, canvas.height);
+  //interface = new Interface(canvas.width, canvas.height);
   
 
   //creates the players bird - REFACTOR
@@ -87,10 +89,12 @@ function setup() {
   
   setTimeout(destroyClouds, 10000);
 
-  interface.button.mousePressed(showPopUp);
-  interface.submitButton.mousePressed(sendHappyThought);
-  interface.closePopUpButton.mousePressed(hidePopUp);
+  //interface.button.mousePressed(showPopUp);
+  //interface.submitButton.mousePressed(sendHappyThought);
+  //interface.closePopUpButton.mousePressed(hidePopUp);
   
+  popUp = select('#popUp');
+  popUp.hide();
 }
 
 

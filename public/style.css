@@ -5,7 +5,8 @@ body{
 
 button{
   color: white;
-  font-size: 18px;
+  font-size: 1.5vw;
+  padding: 1em;
 }
 
 
@@ -41,5 +42,8 @@ button{
 }
 
 #happy{
-  
+  position: absolute;
+  top: 90vh;
+  left: 75vw;
+  background-color: purple;
 }
