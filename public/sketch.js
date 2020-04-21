@@ -231,8 +231,9 @@ function sendHappyThought() {
   console.log(happyThoughts);
 }
 
-function addHappyThought(happyThought) {
-  append(happyThoughts, happyThought);
+function addHappyThought(serverHappyThought) {
+  //append(happyThoughts, happyThought);
+  happyThoughts = serverHappyThoughts;
   console.log(happyThoughts);
 }
 

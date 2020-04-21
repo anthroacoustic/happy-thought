@@ -26,12 +26,18 @@ io.sockets.on('connection', newConnection);
 
 function newConnection(socket){
   console.log('new connection: ' + socket.id);
+  emitHappyThoughts;
 
-  socket.on('happyThought', emitHappyThought);
+  socket.on('happyThought', updateServerHappyThoughts);
 
-  //Recieves happy thought from client.
-  function emitHappyThought(happyThought){
-    io.sockets.emit('happyThoughtFrom', happyThought)
+  //Recieves happy thought from client and append it to serverHappyThoughts array
+  function updateServerHappyThought(happyThought){
+    append(serverHappyThoughts, happyThought);
+    emitHappyThoughts();
+  }
+  
+  function emitHappyThoughts(happyThought){
+    io.sockets.broadcast('happyThoughtFrom', serverHappyThoughts)
   }
   
 }
