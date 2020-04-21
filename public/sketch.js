@@ -225,13 +225,12 @@ function hidePopUp(){
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
   socket.emit("happyThought", userInput.value());
-
   userInput.value("");
   popUp.hide();
   console.log(happyThoughts);
 }
 
-function addHappyThought(serverHappyThought) {
+function addHappyThought(serverHappyThoughts) {
   //append(happyThoughts, happyThought);
   happyThoughts = serverHappyThoughts;
   console.log(happyThoughts);
