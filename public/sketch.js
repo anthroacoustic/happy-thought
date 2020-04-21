@@ -29,6 +29,7 @@ let happyThoughts = [
 //let interface;
 
 let popUp;
+let happyButton;
 /*
 let userInput;
 let submitButton;
@@ -94,6 +95,7 @@ function setup() {
   //interface.closePopUpButton.mousePressed(hidePopUp);
   
   popUp = select('#popUp');
+  popUp.mousePressed(showPopUp);
   popUp.hide();
 }
 
@@ -150,7 +152,7 @@ function windowResized() {
   for (cloud of clouds){
     cloud.resize();
   }
-  interface.resize(canvas.width, canvas.height);
+ // interface.resize(canvas.width, canvas.height);
   
 }
 
@@ -199,10 +201,10 @@ function showPopUp() {
  // fill(51);
  // rect(height / 2 - height/4, width / 2 - width/4, height/2, width/2);
   //interface.resize();
-  interface.popUp.show();
+  popUp.show();
   //interface.userInput.show();
   //interface.submitButton.show();
-  interface.resize(canvas.width, canvas.height);
+  //interface.resize(canvas.width, canvas.height);
 }
 
 function hidePopUp(){
