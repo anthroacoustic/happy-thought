@@ -19,17 +19,16 @@ let cloudIdCounter = 0;
 let cloudDrawTimer = 151;
 
 //create array for the happy thought text values.
-let happyThoughts = [
-  "Cease the day!",
-  "Spring!",
-  "There is beauty all around us."
-];
+let happyThoughts = [];
+
 //
 //create variables for the HTML elements that will appear in the user interface
 //let interface;
 
 let popUp;
 let happyButton;
+let submitButton;
+let userInput;
 /*
 let userInput;
 let submitButton;
@@ -95,8 +94,20 @@ function setup() {
   //interface.closePopUpButton.mousePressed(hidePopUp);
   
   popUp = select('#popUp');
-  popUp.mousePressed(showPopUp);
   popUp.hide();
+  
+  
+  happyButton = select('#happyButton') 
+  happyButton.mousePressed(showPopUp);
+  
+  closeButton = select('#close');
+  closeButton.mousePressed(hidePopUp);
+  
+  submitButton = select('#submit');
+  submitButton.mousePressed(sendHappyThought);
+  
+  userInput = select('#userInput');
+  
 }
 
 
@@ -157,10 +168,6 @@ function windowResized() {
 }
 
 
-
-
-
-
 //
 //CLOUD MANAGEMENT-------------------------------------------------------------------------------
 //
@@ -208,7 +215,7 @@ function showPopUp() {
 }
 
 function hidePopUp(){
-  interface.popUp.hide();
+  popUp.hide();
 }
 
 
@@ -217,12 +224,10 @@ function hidePopUp(){
 //
 function sendHappyThought() {
   //SOCKET CODE SENDS HAPPY THOUGHT
-  socket.emit("happyThought", interface.userInput.value());
+  socket.emit("happyThought", userInput.value());
 
-  interface.userInput.value("");
-  interface.popUp.hide();
-  interface.userInput.hide();
-  interface.submitButton.hide();
+  userInput.value("");
+  popUp.hide();
   console.log(happyThoughts);
 }
 

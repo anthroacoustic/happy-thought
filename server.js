@@ -1,3 +1,7 @@
+var serverHappyThoughts = ["Cease the day!",
+  "Spring!",
+  "There is beauty all around us."];
+
 //import express to create the server
 var express = require('express');
 var app = express();
@@ -18,6 +22,7 @@ var io = socket(server);
 //io listens for events and performs functions when it hears them
 // when the 'connection' event happens, I want it perform 'newConnection
 io.sockets.on('connection', newConnection);
+
 
 function newConnection(socket){
   console.log('new connection: ' + socket.id);
