@@ -9,7 +9,6 @@ button{
   padding: .5em;
 }
 
-
 #popUp {
   background-color: #8DB32C;
   position: absolute;
@@ -19,7 +18,6 @@ button{
   margin-left: -25vw;  
   width: 50vw;
   padding: 2.5%;
-
 }
 
 #close {

@@ -29,6 +29,7 @@ class Cloud {
     
     image(this.cloudImg, this.pos.x, this.pos.y, this.width, this.height);
     fill(500);
+    textSize(20);
     text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5, this.width - this.width/4);
   }
 

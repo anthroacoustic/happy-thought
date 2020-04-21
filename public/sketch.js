@@ -16,7 +16,7 @@ let birds = [];
 let clouds = [];
 let cloudIdCounter = 0;
 
-let cloudDrawTimer = 151;
+let cloudDrawTimer = 400;
 
 //create array for the happy thought text values.
 let happyThoughts = [];
@@ -29,6 +29,8 @@ let popUp;
 let happyButton;
 let submitButton;
 let userInput;
+
+let connected = false;
 /*
 let userInput;
 let submitButton;
@@ -174,12 +176,13 @@ function windowResized() {
 // clouds are created at random time intervals
 function createClouds() {
   cloudDrawTimer +=1;
-  if (cloudDrawTimer > 450){
-    clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
-    cloudIdCounter += 1;
-    cloudDrawTimer = 0;
+  if (connected){ 
+    if (cloudDrawTimer > 450){
+      clouds.push(new Cloud(random(happyThoughts), cloudImg, cloudIdCounter));
+      cloudIdCounter += 1;
+      cloudDrawTimer = 0;
+    }
   }
-  
   
   //let randomTime = random(5, 10) * 1000;
   
@@ -232,6 +235,7 @@ function sendHappyThought() {
 
 function addHappyThought(serverHappyThoughts) {
   //append(happyThoughts, happyThought);
+  connected = true;
   happyThoughts = serverHappyThoughts;
   console.log(happyThoughts);
 }
