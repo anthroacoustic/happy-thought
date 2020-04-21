@@ -1,12 +1,12 @@
 body{
   color: white;
-  font-size: 40px;
+  font-size: 1.5em;
 }
 
 button{
   color: white;
   font-size: 1.5vw;
-  padding: 1em;
+  padding: .5em;
 }
 
 
@@ -37,8 +37,8 @@ button{
   
 }
 
-#area {
-  width:98.75%
+#userInput {
+  width:98.75%;
 }
 
 #happyButton{
