@@ -1,6 +1,7 @@
 body{
   color: white;
-  font-size: 1vw;
+  font-size: 1.5vw;
+  font-family: DIN Alternate;
   
 }
 
@@ -13,7 +14,8 @@ button{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size 1
+  font-family: DIN Alternate;
+  font-size: 1.5vw;
 }
 
 #popUp {
@@ -39,6 +41,7 @@ button{
   position: relative;
   float: right;
   background-color: purple;
+  margin-top: 2vh;
 }
 
 #userInput {
@@ -47,7 +50,7 @@ button{
 
 #happyButton{
   position: absolute;
-  top: 92.5vh;
+  top: 91.5vh;
   left: 75vw;  
   background-color: purple;
 } 
