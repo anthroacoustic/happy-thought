@@ -16,7 +16,7 @@ let birds = [];
 let clouds = [];
 let cloudIdCounter = 0;
 
-let cloudDrawTimer = 400;
+let cloudDrawTimer = 0;
 
 //create array for the happy thought text values.
 let happyThoughts = [];
@@ -110,6 +110,8 @@ function setup() {
   
   userInput = select('#userInput');
   
+  
+  clouds.push(new Cloud('happy thoughts', cloudImg, cloudIdCounter))
 }
 
 

@@ -1,7 +1,7 @@
 body{
   color: white;
   font-size: 1.5vw;
-  font-fam: DIN Alternate;
+  font-family: DIN Alternate;
   border-radus: 50vw;
   
 }
@@ -9,8 +9,9 @@ body{
 button{
   color: white;
   padding: 1vw;
-  background-color: #D457CF; 
+  background-color: #009FF1; 
   border: .5w;
+  border-color: #2B2B2B;
   border-radius: 10%;
   color: white;
   text-align: center;
@@ -29,7 +30,8 @@ input:focus, textarea:focus, select:focus, button:focus{
 
 
 #popUp {
-  background-color: #40663F;
+  background-color: #8DB32C;
+  font-size: 2vw;
   position: absolute;
   top: 50vh;
   left: 50vw;
