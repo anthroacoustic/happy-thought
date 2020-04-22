@@ -44,7 +44,7 @@ class Bird {
       this.img = birdLeftImg;
       this.direction = 'left'   
     }
-   this.pos.x -= 1;   
+   this.pos.x -= width/16;   
   }
   
   moveRight(){
@@ -52,7 +52,7 @@ class Bird {
       this.img = birdRightImg;
       this.direction = 'right';
     }
-    this.pos.x +=1;
+    this.pos.x +=width/16;
   }
   
   

@@ -146,14 +146,7 @@ function draw() {
     bird.drawBird();
   }
 
-  //if the user presses the left or right arrow, the bird will move to the left or right
-  if (keyIsPressed === true) {
-    if (keyCode === LEFT_ARROW) {
-      birds[0].moveLeft();
-    } else if (keyCode === RIGHT_ARROW) {
-      birds[0].moveRight();
-    }
-  }
+  
 }
 
 
@@ -240,3 +233,17 @@ function addHappyThought(serverHappyThoughts) {
   console.log(happyThoughts);
 }
 
+
+
+//
+//USER INPUT----------------
+//
+
+//if the user presses the left or right arrow, the bird will move to the left or right
+ function keyPressed(){
+    if (keyCode === LEFT_ARROW) {
+      birds[0].moveLeft();
+    } else if (keyCode === RIGHT_ARROW) {
+      birds[0].moveRight();
+    }
+  }
