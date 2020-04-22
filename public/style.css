@@ -8,7 +8,7 @@ body{
 button{
   color: white;
   padding: 1vw;
-  background-color: #4CAF50; /* Green */
+  background-color: #D457CF; 
   border: none;
   color: white;
   text-align: center;
@@ -18,8 +18,15 @@ button{
   font-size: 1.5vw;
 }
 
+
+
+input:focus, textarea:focus, select:focus, button:focus{
+        outline: none;
+    }
+
+
 #popUp {
-  background-color: #8DB32C;
+  background-color: #40663F;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -32,15 +39,14 @@ button{
 #close {
   position: relative;
   float: right;
-  background-color: purple;
-  margin-top: -5% 
+  margin-top: -5%;
+  outline: none;
   
 }
 
 #submit {
   position: relative;
   float: right;
-  background-color: purple;
   margin-top: 2vh;
 }
 
@@ -52,5 +58,5 @@ button{
   position: absolute;
   top: 91.5vh;
   left: 75vw;  
-  background-color: purple;
+  
 } 
