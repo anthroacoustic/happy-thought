@@ -5,7 +5,7 @@ body{
 
 button{
   color: white;
-  font-size: 1m;
+  font-size: 1em
   padding: .5em .5em;
   background-color: #4CAF50; /* Green */
   border: none;
@@ -39,7 +39,6 @@ button{
   position: relative;
   float: right;
   background-color: purple;
-  
 }
 
 #userInput {
@@ -48,7 +47,6 @@ button{
 
 #happyButton{
   position: absolute;
-  top: 90vh;
-  left: 75vw;
-  background-color: purple;
+   top: 92.5vh;
+  left: 80vw;  background-color: purple;
 } 
