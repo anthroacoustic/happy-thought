@@ -5,8 +5,14 @@ class Cloud {
     this.resize();
     
     this.happyThought = happy;
-    this.happyText = createP(happyThought);
+   /*
+    this.happyText = createP(this.happyThought);
+    this.happyText.size(this.width, this.height);
+    this.happyText.style('align-self', 'center');
+    this.happyText.style('font-family', 'DIN Alternate');
+    this.happyText.style('font-size', '2vw');
     console.log(this.happyThought)
+   */
     this.tWidth = textWidth(this.happyThought);
     
     
@@ -24,8 +30,8 @@ class Cloud {
     fill(500);
     textSize(20);
     textFont('DIN Alternate');
-    happyText.position(this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5);
-    text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/2 - 5, this.width - this.width/4);
+    //this.happyText.position(this.pos.x, this.pos.y);
+    text(this.happyThought, this.pos.x + this.width/2 - this.tWidth/2, this.pos.y + this.height/3, this.width - this.width/4);
   }
 
   moveCloud(){
