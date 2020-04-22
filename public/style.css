@@ -5,8 +5,15 @@ body{
 
 button{
   color: white;
-  font-size: 1.5vw;
-  padding: .5em;
+  font-size: 1m;
+  padding: .5em .5em;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 #popUp {
@@ -44,4 +51,4 @@ button{
   top: 90vh;
   left: 75vw;
   background-color: purple;
-}
+} 
