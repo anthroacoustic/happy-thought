@@ -1,7 +1,8 @@
 body{
   color: white;
   font-size: 1.5vw;
-  font-family: DIN Alternate;
+  font-fam: DIN Alternate;
+  border-radus: 50vw;
   
 }
 
@@ -9,13 +10,15 @@ button{
   color: white;
   padding: 1vw;
   background-color: #D457CF; 
-  border: none;
+  border: .5w;
+  border-radius: 10%;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-family: DIN Alternate;
   font-size: 1.5vw;
+  
 }
 
 
@@ -55,8 +58,7 @@ input:focus, textarea:focus, select:focus, button:focus{
 }
 
 #happyButton{
-  position: absolute;
-  top: 91.5vh;
-  left: 75vw;  
-  
+position: absolute;
+left: 75vw;  
+top:92vh;  
 } 
